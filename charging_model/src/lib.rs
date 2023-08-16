@@ -3,6 +3,7 @@
 //! The simulation can be used to explore different system configurations and asses different deployments of charging
 //! stations.
 
-pub mod sim;
-pub mod input;
 pub mod error;
+pub mod input;
+pub mod probabilities;
+pub mod sim;

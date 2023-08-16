@@ -11,7 +11,9 @@
 //!   demands at a given 15-minute interval)
 //! - The ratio of actual to maximum power demand ("concurrency factor"
 
+use crate::error::Error;
+
 /// Simulates the energy consumption characteristics of a EV charging station.
-pub fn simulate_station() -> Result<(), String> {
+pub fn simulate_station() -> Result<(), Error> {
     Ok(())
 }
