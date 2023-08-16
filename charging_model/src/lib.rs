@@ -7,5 +7,5 @@ pub(crate) mod charging_station;
 pub mod error;
 pub mod input;
 pub mod output;
-pub mod probabilities;
+pub(crate) mod probabilities;
 pub mod sim;

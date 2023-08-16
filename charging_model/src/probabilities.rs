@@ -46,7 +46,7 @@ impl ChargingNeed {
     }
 }
 
-pub trait CalculateMean<T> {
+pub(crate) trait CalculateMean<T> {
     fn to_mean(&self) -> f32;
 }
 
@@ -57,7 +57,7 @@ impl CalculateMean<ChargeProbabilities> for ChargeProbabilities {
     }
 }
 
-pub trait GetWeightedDemand<T> {
+pub(crate) trait GetWeightedDemand<T> {
     fn get_weighted_demand(&self) -> f32;
 }
 
