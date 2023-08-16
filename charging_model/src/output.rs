@@ -1,6 +1,6 @@
 //! This module organizes the types needed to represent the results of the simulation.
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct SimResult {
     /// Power demand in case all charging stations are active at the same time.
     pub theoretical_max_kW: f32,

@@ -39,6 +39,7 @@ dependencies = [
  "env_logger",
  "log",
  "rand",
+ "rasciigraph",
  "test-log",
 ]
 
@@ -187,6 +188,12 @@ checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 dependencies = [
  "getrandom",
 ]
+
+[[package]]
+name = "rasciigraph"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "89a3273d76a0cdbb09ecead2f6007d6d169211f3c9c6dd30cd8a2e8175adcb74"
 
 [[package]]
 name = "regex"

@@ -12,3 +12,4 @@ rand = "0.8.5"
 [dev-dependencies]
 env_logger = "*"
 test-log = "0.2.12"
+rasciigraph = "0.2"

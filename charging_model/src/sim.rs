@@ -71,17 +71,49 @@ fn map_tick_to_arrival_probability(tick: usize, prob: &ArrivalProbabilities) -> 
 
 #[cfg(test)]
 mod test {
-    use crate::input::Input;
+    use crate::{input::Input, output::SimResult};
+    use rasciigraph::{plot, Config};
     use test_log::test;
 
     #[test]
     fn test_sim() {
-        let input = Input::default();
-        let res = super::simulate_station(input);
-        println!("Results are:\n{:#?}", res);
+        const TEST_CASES: usize = 30;
+        let mut res: Vec<SimResult> = Vec::new();
+        for i in 1..=TEST_CASES {
+            let input = Input {
+                charge_points: i as u32,
+                ..Default::default()
+            };
+            res.push(super::simulate_station(input));
+        }
+        let concurrency_factors = res
+            .iter()
+            .map(|r| (r.actual_max_kW / r.theoretical_max_kW) as f64)
+            .collect::<Vec<_>>();
+
         println!(
-            "Concurrency factor: {}",
-            res.actual_max_kW / res.theoretical_max_kW
+            "{}",
+            plot(
+                concurrency_factors.clone(),
+                Config::default().with_caption("Concurrency factor".into())
+            )
+        );
+        println!(
+            "{:?}",
+            concurrency_factors
+                .iter()
+                .enumerate()
+                .map(|(i, f)| format!("[{:02}]: {:.02}", i + 1, f))
+                .collect::<Vec<String>>()
+        );
+
+        let actual_max_kWh: Vec<f64> = res.iter().map(|a| a.actual_max_kW as f64).collect();
+        println!(
+            "{}",
+            plot(
+                actual_max_kWh.clone(),
+                Config::default().with_caption("Actual max power".into())
+            )
         );
     }
 }
