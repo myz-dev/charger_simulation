@@ -19,13 +19,13 @@
 	onDestroy(() => de_register_events(tooltip, anchor, tooltip_arrow));
 </script>
 
-<div class="anchor" bind:this={anchor} aria-describedby={id}>
+<div class="anchor z-0" bind:this={anchor} aria-describedby={id}>
 	<slot name="anchor" />
 </div>
 
 <div
 	{id}
-	class="tooltip {bg_color_class} {tailwind_classes.join(' ')}"
+	class="tooltip z-20 {bg_color_class} {tailwind_classes.join(' ')}"
 	bind:this={tooltip}
 	role="tooltip"
 >

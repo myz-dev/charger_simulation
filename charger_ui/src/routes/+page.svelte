@@ -8,7 +8,7 @@
 		<div class="max-w-md">
 			<h1 class="mb-5 text-5xl font-bold">Plan your station!</h1>
 			<p class="mb-5 font-semibold">How many charging stations do I need?</p>
-			<a href="/sim"><button class="btn btn-primary">Explore now!</button></a>
+			<a href="/evaluation"><button class="btn btn-primary">Explore now!</button></a>
 		</div>
 	</div>
 </div>

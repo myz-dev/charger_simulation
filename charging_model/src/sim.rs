@@ -85,6 +85,13 @@ mod test {
                 ..Default::default()
             };
             res.push(super::simulate_station(input));
+            println!(
+                "[{}]: Cons/year {}kWh",
+                i - 1,
+                res[i - 1].consumption_year_kWh
+            );
+            println!("[{}]: Actual max {}", i - 1, res[i - 1].actual_max_kW);
+            println!("[{}]: The. max {}", i - 1, res[i - 1].theoretical_max_kW);
         }
         let concurrency_factors = res
             .iter()
